@@ -1,4 +1,8 @@
-/* Подключаем локальный шрифт */
+/* ПЛАВНЫЙ СКРОЛЛ - ВОТ ЧТО ТЫ ПРОСИЛ! */
+html {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: 'MontserratBlack';
     src: url('Montserrat-Black.ttf') format('truetype');
@@ -27,7 +31,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Секция главного экрана */
+/* Главная секция */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -134,33 +138,43 @@ body {
     color: var(--cornflower);
 }
 
-/* Секция Портфолио */
+/* ===== СЕКЦИЯ ПОРТФОЛИО ===== */
 .portfolio-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .section-title {
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 50px;
+    font-size: 48px;
     color: var(--cornflower);
     letter-spacing: 2px;
+    margin-bottom: 50px;
+    text-align: center;
 }
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .video-card {
-    background: #0d1428;
+    background: rgba(27, 44, 193, 0.2);
+    border: 1px solid var(--dusk);
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid var(--dusk);
     transition: 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
 }
 
 .video-card:hover {
@@ -168,17 +182,17 @@ body {
     transform: translateY(-5px);
 }
 
-.video-card iframe {
+.video-card video {
     width: 100%;
-    height: 250px;
-    border: none;
-    display: block;
-    background: black;
+    height: 220px;
+    background: #000;
+    object-fit: cover; /* Обрезает видео, чтобы оно заполняло блок красиво */
+    border-bottom: 1px solid var(--dusk);
+    margin-bottom: 15px;
 }
 
-/* Маленький бейдж, как у статуса */
+/* Тот самый бейдж, стилизованный под статус */
 .badge {
-    display: inline-block;
     background: rgba(27, 44, 193, 0.2);
     border: 1px solid var(--persian);
     padding: 6px 12px;
@@ -187,13 +201,11 @@ body {
     font-family: Arial, sans-serif;
     color: var(--icy);
     letter-spacing: 0.5px;
-    margin: 15px;
 }
 
 @media (max-width: 768px) {
     .main-title { font-size: 48px; }
     .sub-title { font-size: 28px; }
-    .description { font-size: 16px; }
     .buttons { flex-direction: column; width: 100%; max-width: 300px; }
     .btn-primary, .btn-secondary { width: 100%; text-align: center; }
     .video-grid { grid-template-columns: 1fr; }
