@@ -1,4 +1,3 @@
-/* ПЛАВНЫЙ СКРОЛЛ - ВОТ ЧТО ТЫ ПРОСИЛ! */
 html {
     scroll-behavior: smooth;
 }
@@ -25,13 +24,15 @@ html {
 }
 
 body {
-    background-color: var(--background);
+    /* Фон становится темнее к низу страницы */
+    background: linear-gradient(180deg, #0d1530 0%, #070b18 60%, #02040a 100%);
+    min-height: 100vh;
     color: var(--white);
     font-family: 'MontserratBlack', Arial, sans-serif;
     overflow-x: hidden;
 }
 
-/* Главная секция */
+/* Секция главного экрана */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -148,12 +149,22 @@ body {
     padding: 80px 20px;
 }
 
+/* Переливающийся градиент на заголовке */
 .section-title {
     font-size: 48px;
-    color: var(--cornflower);
-    letter-spacing: 2px;
     margin-bottom: 50px;
     text-align: center;
+    background: linear-gradient(90deg, #7692FF, #ABD2FA, #7692FF);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
 }
 
 .video-grid {
@@ -174,7 +185,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 0; /* Убрал лишний отступ снизу, так как бейджа больше нет */
 }
 
 .video-card:hover {
@@ -186,26 +197,41 @@ body {
     width: 100%;
     height: 220px;
     background: #000;
-    object-fit: cover; /* Обрезает видео, чтобы оно заполняло блок красиво */
+    object-fit: cover;
     border-bottom: 1px solid var(--dusk);
-    margin-bottom: 15px;
 }
 
-/* Тот самый бейдж, стилизованный под статус */
-.badge {
+/* Общие бейджи внизу */
+.highlight-badges {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.big-badge {
     background: rgba(27, 44, 193, 0.2);
     border: 1px solid var(--persian);
-    padding: 6px 12px;
+    padding: 12px 30px;
     border-radius: 50px;
-    font-size: 13px;
+    font-size: 16px;
     font-family: Arial, sans-serif;
     color: var(--icy);
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.big-badge:hover {
+    border-color: var(--cornflower);
+    color: var(--cornflower);
+    transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {
     .main-title { font-size: 48px; }
     .sub-title { font-size: 28px; }
+    .description { font-size: 16px; }
     .buttons { flex-direction: column; width: 100%; max-width: 300px; }
     .btn-primary, .btn-secondary { width: 100%; text-align: center; }
     .video-grid { grid-template-columns: 1fr; }
