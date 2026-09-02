@@ -1,4 +1,4 @@
-/* Подключаем ТВОЙ файл шрифта */
+/* Подключаем локальный шрифт */
 @font-face {
     font-family: 'MontserratBlack';
     src: url('Montserrat-Black.ttf') format('truetype');
@@ -6,8 +6,7 @@
 }
 
 :root {
-    /* Цвета с твоего 3-го скриншота */
-    --background: #070b18; /* Deep Navy (почти черный) */
+    --background: #070b18; 
     --dusk: #3D5B8C;
     --persian: #1B2CC1;
     --cornflower: #7692FF;
@@ -24,10 +23,11 @@
 body {
     background-color: var(--background);
     color: var(--white);
-    /* Используем твой TTF для всего, но для мелкого текста поставим запасной шрифт */
     font-family: 'MontserratBlack', Arial, sans-serif;
+    overflow-x: hidden;
 }
 
+/* Секция главного экрана */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -41,18 +41,18 @@ body {
 .status {
     background: rgba(27, 44, 193, 0.2);
     border: 1px solid var(--persian);
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 50px;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--icy);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     letter-spacing: 1px;
 }
 
 .dot {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background-color: #5ebc1e;
     border-radius: 50%;
     margin-right: 8px;
@@ -61,34 +61,33 @@ body {
 
 @keyframes pulse {
     0% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.7; transform: scale(1.3); }
+    50% { opacity: 0.7; transform: scale(1.2); }
     100% { opacity: 1; transform: scale(1); }
 }
 
 .main-title {
-    font-size: 80px;
+    font-size: 72px;
     font-weight: 900;
     letter-spacing: 2px;
     line-height: 1;
-    color: var(--white);
 }
 
 .sub-title {
-    font-size: 50px;
+    font-size: 48px;
     font-weight: 900;
     color: var(--cornflower);
     letter-spacing: 8px;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 30px;
 }
 
 .description {
     font-size: 20px;
-    font-family: Arial, sans-serif; /* Обычный шрифт для читаемости */
+    font-family: Arial, sans-serif;
     color: var(--icy);
     max-width: 600px;
-    line-height: 1.6;
-    margin-bottom: 60px;
+    line-height: 1.5;
+    margin-bottom: 50px;
 }
 
 .buttons {
@@ -100,8 +99,8 @@ body {
     background-color: var(--persian);
     color: var(--white);
     padding: 20px 50px;
-    font-size: 20px;
-    font-family: 'MontserratBlack', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
     letter-spacing: 2px;
     border: none;
     border-radius: 30px;
@@ -120,8 +119,8 @@ body {
     background-color: transparent;
     color: var(--white);
     padding: 20px 50px;
-    font-size: 20px;
-    font-family: 'MontserratBlack', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
     letter-spacing: 2px;
     border: 1px solid var(--dusk);
     border-radius: 30px;
@@ -135,9 +134,67 @@ body {
     color: var(--cornflower);
 }
 
+/* Секция Портфолио */
+.portfolio-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--cornflower);
+    letter-spacing: 2px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.video-card {
+    background: #0d1428;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--dusk);
+    transition: 0.3s;
+}
+
+.video-card:hover {
+    border-color: var(--cornflower);
+    transform: translateY(-5px);
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+    display: block;
+    background: black;
+}
+
+/* Маленький бейдж, как у статуса */
+.badge {
+    display: inline-block;
+    background: rgba(27, 44, 193, 0.2);
+    border: 1px solid var(--persian);
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    color: var(--icy);
+    letter-spacing: 0.5px;
+    margin: 15px;
+}
+
 @media (max-width: 768px) {
-    .main-title { font-size: 50px; }
-    .sub-title { font-size: 30px; }
+    .main-title { font-size: 48px; }
+    .sub-title { font-size: 28px; }
+    .description { font-size: 16px; }
     .buttons { flex-direction: column; width: 100%; max-width: 300px; }
     .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+    .video-grid { grid-template-columns: 1fr; }
 }
