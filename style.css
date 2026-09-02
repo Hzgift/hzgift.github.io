@@ -22,11 +22,11 @@ body {
     background: linear-gradient(180deg, #0d1530 0%, #070b18 60%, #02040a 100%);
     min-height: 100vh;
     color: var(--white);
-    font-family: 'Montserrat', sans-serif; /* Теперь точно работает */
+    font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
 }
 
-/* МЕНЮШКА */
+/* Главная менюшка */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -35,6 +35,8 @@ body {
     align-items: center;
     text-align: center;
     padding: 20px;
+    position: relative;
+    z-index: 1; /* Чтобы был поверх партиклов */
 }
 
 .status {
@@ -132,8 +134,35 @@ body {
     color: var(--cornflower);
 }
 
-/* ПОРТФОЛИО */
+/* Партиклы (шарики) */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Фон и шарики за контентом */
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background-color: var(--cornflower);
+    border-radius: 50%;
+    opacity: 0.3; /* Полупрозрачные */
+    animation: float 15s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-30px) translateX(20px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+/* Портфолио */
 .portfolio-section {
+    position: relative;
+    z-index: 1;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -159,12 +188,24 @@ body {
     }
 }
 
+/* ОСНОВНАЯ СЕТКА ВИДЕО */
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
     width: 100%;
     max-width: 1200px;
+    margin-bottom: 30px;
+}
+
+/* ВЕРТИКАЛЬНЫЕ (ТикТоки) - 2 в ряд */
+.video-grid-portrait {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px; /* Чтобы не растягивались на весь экран */
+}
+
+/* ГОРИЗОНТАЛЬНЫЕ - 3 в ряд */
+.video-grid-landscape {
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .video-card {
@@ -174,6 +215,9 @@ body {
     overflow: hidden;
     transition: 0.3s;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    background-color: #000; /* Чтобы края красиво сливались */
 }
 
 .video-card:hover {
@@ -183,12 +227,24 @@ body {
 
 .video-card video {
     width: 100%;
-    height: 220px;
-    background: #000;
-    object-fit: cover;
+    display: block;
+    /* Убираем жесткую высоту и cover, чтобы НИЧЕГО не обрезалось */
+    object-fit: contain; 
+    background: transparent;
 }
 
-/* НАДПИСИ ВНИЗУ (Исправлено, чтобы были в ряд) */
+/* Для вертикальных видео задаем правильное соотношение сторон */
+.video-grid-portrait video {
+    aspect-ratio: 9 / 16;
+    max-height: 500px;
+}
+
+/* Для горизонтальных видео задаем правильное соотношение сторон */
+.video-grid-landscape video {
+    aspect-ratio: 16 / 9;
+}
+
+/* Надписи внизу с жирным шрифтом и звездочками */
 .highlight-badges {
     display: flex;
     justify-content: center;
@@ -203,9 +259,22 @@ body {
     padding: 12px 30px;
     border-radius: 50px;
     font-size: 16px;
+    font-weight: 800; /* Жирный шрифт */
     color: var(--icy);
     letter-spacing: 1px;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Отступ между звездой и текстом */
+}
+
+/* Добавляем звездочку перед текстом */
+.big-badge::before {
+    content: "✦";
+    color: var(--cornflower);
+    font-size: 18px;
+    text-shadow: 0 0 10px rgba(118, 146, 255, 0.8);
+    animation: shine 3s linear infinite;
 }
 
 .big-badge:hover {
@@ -214,10 +283,15 @@ body {
     transform: translateY(-3px);
 }
 
+/* Адаптив под телефон */
 @media (max-width: 768px) {
     .main-title { font-size: 48px; }
     .sub-title { font-size: 28px; }
     .buttons { flex-direction: column; width: 100%; max-width: 300px; }
     .btn-primary, .btn-secondary { width: 100%; text-align: center; }
-    .video-grid { grid-template-columns: 1fr; }
+    
+    .video-grid-portrait, .video-grid-landscape { 
+        grid-template-columns: 1fr; /* На мобилке всё в столбик */
+        max-width: 100%;
+    }
 }
