@@ -11,7 +11,6 @@
 </head>
 <body>
 
-    <!-- МЕНЮШКА -->
     <div class="hero">
         <div class="status">
             <span class="dot"></span> Открыт для заказов
@@ -28,17 +27,22 @@
         </div>
     </div>
 
-    <!-- ПОРТФОЛИО -->
+    <!-- Секция портфолио -->
     <section id="portfolio" class="portfolio-section">
         <h2 class="section-title">Мои работы</h2>
         
-        <div class="video-grid">
+        <!-- ВЕРТИКАЛЬНЫЕ ВИДЕО (Тиктоки) -->
+        <div class="video-grid video-grid-portrait">
             <div class="video-card">
                 <video src="video1.mp4" controls preload="metadata"></video>
             </div>
             <div class="video-card">
                 <video src="video2.mp4" controls preload="metadata"></video>
             </div>
+        </div>
+
+        <!-- ГОРИЗОНТАЛЬНЫЕ ВИДЕО (Длинные) -->
+        <div class="video-grid video-grid-landscape">
             <div class="video-card">
                 <video src="video3.mp4" controls preload="metadata"></video>
             </div>
@@ -56,6 +60,35 @@
             <div class="big-badge">Работал с ютуберами с 1млн+ подписчиков</div>
         </div>
     </section>
+
+    <!-- Партиклы (создаются скриптом) -->
+    <div class="particles-container" id="particles"></div>
+
+    <script>
+        // Генерация плавных полупрозрачных шариков
+        const container = document.getElementById('particles');
+        const count = 40; // Количество шариков
+
+        for (let i = 0; i < count; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Случайный размер от 2 до 8 пикселей
+            const size = Math.random() * 6 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            // Случайная позиция
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            
+            // Случайная скорость плавания (от 10 до 30 секунд)
+            particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+            particle.style.animationDelay = `${Math.random() * 10}s`;
+            
+            container.appendChild(particle);
+        }
+    </script>
 
 </body>
 </html>
