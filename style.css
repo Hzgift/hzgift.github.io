@@ -1,0 +1,125 @@
+html { scroll-behavior: smooth; }
+
+:root {
+    --background: #070b18; 
+    --dusk: #3D5B8C;
+    --persian: #1B2CC1;
+    --cornflower: #7692FF;
+    --icy: #ABD2FA;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: linear-gradient(180deg, #0d1530 0%, #070b18 60%, #02040a 100%);
+    min-height: 100vh;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Менюшка (Увеличена, чтобы заполнять красный квадрат) */
+.hero { 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding: 40px 20px; 
+    position: relative; 
+    z-index: 1; 
+}
+
+.status { background: rgba(27, 44, 193, 0.2); border: 1px solid var(--persian); padding: 10px 20px; border-radius: 50px; font-size: 16px; color: var(--icy); margin-bottom: 45px; letter-spacing: 1px; }
+.dot { display: inline-block; width: 10px; height: 10px; background-color: #5ebc1e; border-radius: 50%; margin-right: 8px; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
+
+/* Увеличены шрифты */
+.main-title { font-size: 96px; font-weight: 900; letter-spacing: 2px; line-height: 1; }
+.sub-title { font-size: 60px; font-weight: 900; color: var(--cornflower); letter-spacing: 12px; margin-top: 15px; margin-bottom: 40px; }
+.description { font-size: 24px; color: var(--icy); max-width: 700px; line-height: 1.5; margin-bottom: 60px; }
+
+.buttons { display: flex; gap: 30px; }
+.btn-primary { background-color: var(--persian); color: var(--white); padding: 24px 60px; font-size: 22px; font-weight: 600; letter-spacing: 2px; border: none; border-radius: 30px; cursor: pointer; text-decoration: none; transition: 0.3s; box-shadow: 0 0 20px rgba(27, 44, 193, 0.4); }
+.btn-primary:hover { background-color: var(--cornflower); transform: translateY(-2px); }
+.btn-secondary { background-color: transparent; color: var(--white); padding: 24px 60px; font-size: 22px; font-weight: 600; letter-spacing: 2px; border: 1px solid var(--dusk); border-radius: 30px; cursor: pointer; text-decoration: none; transition: 0.3s; }
+.btn-secondary:hover { border-color: var(--cornflower); color: var(--cornflower); }
+
+/* Партиклы */
+.particles-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.particle { position: absolute; background-color: var(--cornflower); border-radius: 50%; opacity: 0.3; animation: float 10s infinite linear; }
+@keyframes float { 0% { transform: translateY(0) translateX(0); } 50% { transform: translateY(-50px) translateX(20px); } 100% { transform: translateY(0) translateX(0); } }
+
+/* Секции */
+.portfolio-section, .price-section { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 80px 20px; }
+
+.section-title { font-size: 48px; margin-bottom: 20px; text-align: center; background: linear-gradient(90deg, #7692FF, #ABD2FA, #7692FF); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 3s linear infinite; }
+@keyframes shine { to { background-position: 200% center; } }
+
+/* Видео */
+.video-grid { display: grid; gap: 30px; width: 100%; max-width: 1200px; margin-bottom: 30px; }
+.video-grid-portrait { grid-template-columns: repeat(2, 1fr); max-width: 600px; }
+.video-grid-landscape { grid-template-columns: repeat(3, 1fr); }
+.video-card { background: rgba(27, 44, 193, 0.2); border: 1px solid var(--dusk); border-radius: 12px; overflow: hidden; transition: 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.5); display: flex; justify-content: center; background-color: #000; }
+.video-card:hover { border-color: var(--cornflower); transform: translateY(-5px); }
+.video-card video { width: 100%; display: block; object-fit: contain; background: transparent; }
+.video-grid-portrait video { aspect-ratio: 9 / 16; max-height: 500px; }
+.video-grid-landscape video { aspect-ratio: 16 / 9; }
+
+/* Бейджи */
+.highlight-badges { display: flex; justify-content: center; gap: 20px; margin-top: 60px; flex-wrap: wrap; }
+.big-badge { background: rgba(27, 44, 193, 0.2); border: 1px solid var(--persian); padding: 12px 30px; border-radius: 50px; font-size: 16px; font-weight: 800; color: var(--icy); letter-spacing: 1px; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+.big-badge::before { content: "✦"; color: var(--cornflower); font-size: 18px; text-shadow: 0 0 10px rgba(118, 146, 255, 0.8); }
+.big-badge:hover { border-color: var(--cornflower); color: var(--cornflower); transform: translateY(-3px); }
+
+/* Прайс */
+.price-section { padding-top: 50px; }
+.price-subtitle { color: var(--icy); font-size: 20px; margin-bottom: 50px; font-family: Arial, sans-serif; }
+
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; width: 100%; max-width: 900px; margin-bottom: 50px; }
+
+.price-card { background: rgba(27, 44, 193, 0.15); border: 1px solid var(--dusk); border-radius: 20px; padding: 40px; text-align: center; transition: 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.5); display: flex; flex-direction: column; align-items: center; }
+.price-card:hover { border-color: var(--cornflower); transform: translateY(-5px); }
+
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 30px; color: var(--white); }
+.card-icon { font-size: 24px; background: var(--persian); padding: 8px; border-radius: 8px; }
+
+.price-box { margin-bottom: 20px; display: flex; align-items: baseline; justify-content: center; gap: 5px; color: var(--cornflower); }
+.currency { font-size: 24px; font-weight: 800; }
+.amount { font-size: 72px; font-weight: 900; line-height: 1; text-shadow: 0 0 20px rgba(118, 146, 255, 0.4); }
+.per { font-size: 18px; font-weight: 600; color: var(--icy); }
+
+.negotiable { font-size: 32px; font-weight: 900; color: var(--cornflower); border: 2px solid var(--cornflower); padding: 15px 20px; border-radius: 12px; margin-bottom: 10px; display: inline-block; }
+
+.card-desc { color: var(--icy); font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; margin-bottom: 30px; }
+
+.features-list { width: 100%; margin-bottom: 30px; display: flex; flex-direction: column; gap: 10px; }
+.feature { display: flex; align-items: center; gap: 10px; background: rgba(0, 0, 0, 0.3); padding: 10px 15px; border-radius: 8px; font-size: 14px; color: var(--white); text-align: left; }
+.feature::before { content: "✓"; color: var(--cornflower); font-weight: 900; }
+
+.btn-order { display: block; width: 100%; background-color: var(--persian); color: var(--white); padding: 15px; border-radius: 30px; font-size: 18px; font-weight: 800; text-decoration: none; transition: 0.3s; box-shadow: 0 0 15px rgba(27, 44, 193, 0.4); }
+.btn-order:hover { background-color: var(--cornflower); }
+
+.btn-secondary-full { display: block; width: 100%; background-color: transparent; border: 1px solid var(--dusk); color: var(--white); padding: 15px; border-radius: 30px; font-size: 18px; font-weight: 800; text-decoration: none; transition: 0.3s; }
+.btn-secondary-full:hover { border-color: var(--cornflower); color: var(--cornflower); }
+
+/* Соц сети */
+.socials { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+.social-btn { display: flex; align-items: center; gap: 12px; background: rgba(27, 44, 193, 0.2); border: 1px solid var(--persian); padding: 15px 30px; border-radius: 50px; color: var(--white); text-decoration: none; font-size: 18px; font-weight: 800; letter-spacing: 1px; transition: 0.3s; }
+.social-btn svg { width: 24px; height: 24px; fill: var(--cornflower); flex-shrink: 0; }
+.social-btn:hover { background: var(--persian); border-color: var(--cornflower); transform: translateY(-3px); }
+
+/* Адаптив под мобилки (чтобы большая менюшка не ломалась) */
+@media (max-width: 768px) {
+    .main-title { font-size: 48px; }
+    .sub-title { font-size: 28px; letter-spacing: 6px; }
+    .description { font-size: 16px; margin-bottom: 40px; }
+    .status { font-size: 12px; margin-bottom: 30px; }
+    .buttons { flex-direction: column; width: 100%; max-width: 300px; gap: 15px; }
+    .btn-primary, .btn-secondary { width: 100%; text-align: center; padding: 18px 40px; font-size: 16px; }
+    .video-grid-portrait, .video-grid-landscape { grid-template-columns: 1fr; max-width: 100%; }
+    .amount { font-size: 60px; }
+}
