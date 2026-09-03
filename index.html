@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hzgift_xD | 3D Artist & Animator</title>
+    <meta name="description" content="Профессиональные Minecraft анимации и рендеры на заказ. Быстро, качественно и недорого!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js для 3D фона -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <!-- Прелоадер -->
+    <div class="preloader" id="preloader">
+        <div class="loader-content">
+            <div class="loader-logo">Hzgift_xD</div>
+            <div class="loader-bar"><span id="loader-progress"></span></div>
+            <div class="loader-percent" id="loader-percent">0%</div>
+        </div>
+    </div>
+
+    <!-- Кастомный курсор -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Прогресс скролла -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Навигация -->
+    <header class="navbar" id="navbar">
+        <div class="logo">Hzgift_xD</div>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="nav-link active">Главная</a>
+            <a href="#portfolio" class="nav-link">Анимации</a>
+            <a href="#renders" class="nav-link">Рендеры</a>
+            <a href="#about" class="nav-link">Обо мне</a>
+            <a href="#stats" class="nav-link">Статистика</a>
+            <a href="#price" class="nav-link">Прайс</a>
+            <a href="#reviews" class="nav-link">Отзывы</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+        </nav>
+        <div class="burger" id="burger">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <!-- Герой -->
+    <section class="hero" id="home">
+        <div id="heroCanvas" class="hero-canvas"></div>
+        <div class="hero-content">
+            <div class="status" data-reveal>
+                <span class="dot"></span> Открыт для заказов
+            </div>
+            <h1 class="main-title glitch" data-text="Hzgift_xD" id="mainTitle" data-reveal>Hzgift_xD</h1>
+            <h2 class="sub-title" id="artistClick" data-reveal>
+                <span id="typingText" class="typing-text">3D ARTIST</span>
+            </h2>
+            <p class="description" data-reveal>Маленький школьник сделает для тебя анимацию или рендер качественно и быстро! :]</p>
+            <div class="buttons" data-reveal>
+                <a href="#portfolio" class="btn-primary magnetic">ПОРТФОЛИО</a>
+                <a href="#price" class="btn-secondary magnetic">ПРАЙС</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"><span></span></div>
+            <p>листай вниз</p>
+        </div>
+    </section>
+
+    <!-- Секция анимаций -->
+    <section id="portfolio" class="portfolio-section">
+        <h2 class="section-title" data-reveal>Мои анимации</h2>
+        <div class="filter-buttons" data-reveal>
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="portrait">Вертикальные</button>
+            <button class="filter-btn" data-filter="landscape">Горизонтальные</button>
+        </div>
+        <div class="video-grid video-grid-portrait" data-reveal>
+            <div class="video-card tilt" data-category="portrait">
+                <video src="video1.mp4" controls preload="metadata"></video>
+                <div class="video-overlay"><span>▶</span></div>
+            </div>
+            <div class="video-card tilt" data-category="portrait">
+                <video src="video2.mp4" controls preload="metadata"></video>
+                <div class="video-overlay"><span>▶</span></div>
+            </div>
+        </div>
+        <div class="video-grid video-grid-landscape" data-reveal>
+            <div class="video-card tilt" data-category="landscape">
+                <video src="video3.mp4" controls preload="metadata"></video>
+                <div class="video-overlay"><span>▶</span></div>
+            </div>
+            <div class="video-card tilt" data-category="landscape">
+                <video src="video4.mp4" controls preload="metadata"></video>
+                <div class="video-overlay"><span>▶</span></div>
+            </div>
+            <div class="video-card tilt" data-category="landscape">
+                <video src="video5.mp4" controls preload="metadata"></video>
+                <div class="video-overlay"><span>▶</span></div>
+            </div>
+        </div>
+        <div class="highlight-badges" data-reveal>
+            <div class="big-badge">Работал с Cristalix</div>
+            <div class="big-badge">Работал с ютуберами с 1млн+ подписчиков</div>
+        </div>
+    </section>
+
+    <!-- Секция рендеров -->
+    <section id="renders" class="portfolio-section renders-section">
+        <h2 class="section-title" data-reveal>Мои рендеры</h2>
+        <div class="render-grid" data-reveal>
+            <img src="render1.png" alt="Рендер 1" loading="lazy" class="tilt">
+            <img src="render2.png" alt="Рендер 2" loading="lazy" class="tilt">
+            <img src="render3.png" alt="Рендер 3" loading="lazy" class="tilt">
+            <img src="render4.png" alt="Рендер 4" loading="lazy" class="tilt">
+            <img src="render5.png" alt="Рендер 5" loading="lazy" class="tilt">
+        </div>
+        <div class="highlight-badges" data-reveal>
+            <div class="big-badge">Работал на множество студий</div>
+            <div class="big-badge">Сделал более 100 рендеров на заказ</div>
+        </div>
+    </section>
+
+    <!-- Обо мне -->
+    <section id="about" class="about-section">
+        <h2 class="section-title" data-reveal>Обо мне</h2>
+        <div class="about-content">
+            <div class="about-card tilt" data-reveal>
+                <div class="about-icon">🎮</div>
+                <h3>Опыт</h3>
+                <p>Более 3 лет занимаюсь 3D-графикой и анимацией в Minecraft.</p>
+            </div>
+            <div class="about-card tilt" data-reveal>
+                <div class="about-icon">⚡</div>
+                <h3>Скорость</h3>
+                <p>Выполняю заказы в кратчайшие сроки без потери качества.</p>
+            </div>
+            <div class="about-card tilt" data-reveal>
+                <div class="about-icon">💎</div>
+                <h3>Качество</h3>
+                <p>Использую профессиональные инструменты и постоянно совершенствуюсь.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Статистика -->
+    <section id="stats" class="stats-section">
+        <h2 class="section-title" data-reveal>Цифры</h2>
+        <div class="stats-grid" data-reveal>
+            <div class="stat-item">
+                <span class="stat-number" data-count="100">0</span>
+                <span class="stat-label">Рендеров</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="50">0</span>
+                <span class="stat-label">Анимаций</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="30">0</span>
+                <span class="stat-label">Довольных клиентов</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Прайс -->
+    <section id="price" class="price-section">
+        <h2 class="section-title" data-reveal>Прайс</h2>
+        <p class="price-subtitle" data-reveal>Цены на мои анимации и рендеры</p>
+        <div class="pricing-grid">
+            <div class="price-card popular tilt" data-reveal>
+                <div class="pop-tag">Хит продаж</div>
+                <div class="card-header"><span class="card-icon">⚡</span><h3>Анимация</h3></div>
+                <div class="price-box">
+                    <span class="currency">₽</span>
+                    <span class="amount">100</span>
+                    <span class="per">за секунду</span>
+                </div>
+                <p class="card-desc">Качественная анимация под любую идею</p>
+                <div class="features-list">
+                    <div class="feature">Качественная картинка</div>
+                    <div class="feature">Быстрые сроки</div>
+                    <div class="feature">Первые 3 правки — бесплатно, далее 50₽</div>
+                </div>
+                <a href="https://t.me/HzLoshara42" class="btn-order magnetic">Заказать</a>
+            </div>
+            <div class="price-card tilt" data-reveal>
+                <div class="card-header"><span class="card-icon">💡</span><h3>Сложные идеи</h3></div>
+                <div class="price-box"><span class="negotiable">Цена обсуждается</span></div>
+                <p class="card-desc">Если у тебя есть сложный сценарий — обсудим детали в ЛС.</p>
+                <a href="https://t.me/HzLoshara42" class="btn-secondary-full magnetic">Написать в ТГ</a>
+            </div>
+            <div class="price-card tilt" data-reveal>
+                <div class="card-header"><span class="card-icon">🎨</span><h3>Рендер</h3></div>
+                <div class="price-box">
+                    <span class="currency">от</span>
+                    <span class="amount">150</span>
+                    <span class="per">до 300 ₽</span>
+                </div>
+                <p class="card-desc">Цена зависит от количества персонажей, масштаба локации и сложности идеи. Всё обсуждается в лс.</p>
+                <div class="features-list"><div class="feature">Правки включены сколько угодно</div></div>
+                <a href="https://t.me/HzLoshara42" class="btn-order magnetic">Заказать</a>
+            </div>
+        </div>
+        <div class="socials" data-reveal>
+            <a href="https://t.me/HzLoshara42" class="social-btn magnetic" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="..."/></svg>
+                Telegram
+            </a>
+            <a href="https://discord.com/users/hzgift" class="social-btn magnetic" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="..."/></svg>
+                Discord
+            </a>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="reviews" class="reviews-section">
+        <h2 class="section-title" data-reveal>Отзывы клиентов</h2>
+        <div class="reviews-slider" data-reveal>
+            <div class="review-card active">
+                <p>«Очень крутая анимация! Сделал быстро и качественно, рекомендую!»</p>
+                <span class="review-author">— Игрок_2005</span>
+            </div>
+            <div class="review-card">
+                <p>«Рендер получился шикарным, спасибо большое!»</p>
+                <span class="review-author">— Alex_M</span>
+            </div>
+            <div class="review-card">
+                <p>«Лучший аниматор, заказываю уже не первый раз»</p>
+                <span class="review-author">— Крипер_777</span>
+            </div>
+            <div class="slider-nav">
+                <button class="prev">←</button>
+                <button class="next">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section">
+        <h2 class="section-title" data-reveal>Частые вопросы</h2>
+        <div class="faq-list" data-reveal>
+            <div class="faq-item">
+                <button class="faq-question">Сколько времени занимает заказ? <span>+</span></button>
+                <div class="faq-answer"><p>Обычно от 1 до 3 дней в зависимости от сложности.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Как происходит оплата? <span>+</span></button>
+                <div class="faq-answer"><p>Оплата через СБП или переводом на карту, обсудим в личных сообщениях.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Можно ли заказать срочно? <span>+</span></button>
+                <div class="faq-answer"><p>Да, срочные заказы выполняются с доплатой 50% к стоимости.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-logo">Hzgift_xD</div>
+        <div class="footer-socials">
+            <a href="https://t.me/HzLoshara42" target="_blank">Telegram</a>
+            <a href="https://discord.com/users/hzgift" target="_blank">Discord</a>
+        </div>
+        <p>© 2025 Все права защищены</p>
+    </footer>
+
+    <!-- Кнопка наверх -->
+    <button id="backToTop" class="back-to-top">↑</button>
+
+    <!-- Лайтбокс -->
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <button class="lightbox-prev">❮</button>
+        <button class="lightbox-next">❯</button>
+    </div>
+
+    <audio id="xdSound" src="xd.mp3"></audio>
+    <div class="particles-container" id="particles"></div>
+
+    <script>
+        // ========== ПРЕЛОАДЕР ==========
+        window.addEventListener('load', () => {
+            let percent = 0;
+            const loaderBar = document.getElementById('loader-progress');
+            const loaderPercent = document.getElementById('loader-percent');
+            const interval = setInterval(() => {
+                percent += Math.floor(Math.random() * 15) + 1;
+                if (percent >= 100) {
+                    percent = 100;
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        document.getElementById('preloader').style.opacity = '0';
+                        document.getElementById('preloader').style.visibility = 'hidden';
+                        initAfterLoad();
+                    }, 500);
+                }
+                loaderBar.style.width = percent + '%';
+                loaderPercent.textContent = percent + '%';
+            }, 200);
+        });
+
+        function initAfterLoad() {
+            type();
+            initParticles();
+            initThreeJS();
+            initStatsCounter();
+            initTiltEffect();
+            initMagneticButtons();
+            initScrollProgress();
+        }
+
+        // ========== КАСТОМНЫЙ КУРСОР ==========
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            dot.style.left = mouseX - 4 + 'px';
+            dot.style.top = mouseY - 4 + 'px';
+        });
+
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.2;
+            ringY += (mouseY - ringY) * 0.2;
+            ring.style.left = ringX - 15 + 'px';
+            ring.style.top = ringY - 15 + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        document.querySelectorAll('a, button, .video-card, .render-grid img, .price-card, .faq-question, .magnetic').forEach(el => {
+            el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+            el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+        });
+
+        // ========== МОБИЛЬНОЕ МЕНЮ ==========
+        const burger = document.getElementById('burger');
+        const navLinks = document.getElementById('navLinks');
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            burger.classList.toggle('active');
+        });
+
+        // ========== АКТИВНАЯ ССЫЛКА ПРИ СКРОЛЛЕ ==========
+        const sections = document.querySelectorAll('section[id]');
+        const navAnchors = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navAnchors.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+            if (scrollY > 200) {
+                document.getElementById('navbar').classList.add('scrolled');
+            } else {
+                document.getElementById('navbar').classList.remove('scrolled');
+            }
+        });
+
+        // ========== ПОЯВЛЕНИЕ ЭЛЕМЕНТОВ ==========
+        const revealElements = document.querySelectorAll('[data-reveal]');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+        revealElements.forEach(el => observer.observe(el));
+
+        // ========== ПРОГРЕСС СКРОЛЛА ==========
+        function initScrollProgress() {
+            const progress = document.getElementById('scrollProgress');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                progress.style.width = scrollPercent + '%';
+            });
+        }
+
+        // ========== ЧАСТИЦЫ (CSS) ==========
+        function initParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 60; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                const size = Math.random() * 4 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
+                container.appendChild(particle);
+            }
+            document.addEventListener('mousemove', (e) => {
+                const particles = document.querySelectorAll('.particle');
+                particles.forEach(p => {
+                    const rect = p.getBoundingClientRect();
+                    const dx = e.clientX - (rect.left + rect.width / 2);
+                    const dy = e.clientY - (rect.top + rect.height / 2);
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        const force = (150 - dist) / 150 * 15;
+                        p.style.transform = `translate(${-dx / dist * force}px, ${-dy / dist * force}px)`;
+                    } else {
+                        p.style.transform = '';
+                    }
+                });
+            });
+        }
+
+        // ========== THREE.JS 3D ФОН ==========
+        function initThreeJS() {
+            const canvas = document.getElementById('heroCanvas');
+            if (!canvas) return;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            // Частицы
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = 800;
+            const posArray = new Float32Array(particlesCount * 3);
+            for (let i = 0; i < particlesCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 10;
+            }
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            const particlesMaterial = new THREE.PointsMaterial({
+                size: 0.02,
+                color: 0x7692FF,
+                transparent: true,
+                blending: THREE.AdditiveBlending
+            });
+            const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.add(particlesMesh);
+
+            // Несколько кубов
+            const cubes = [];
+            for (let i = 0; i < 10; i++) {
+                const geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
+                const material = new THREE.MeshBasicMaterial({ color: 0x7692FF, wireframe: true });
+                const cube = new THREE.Mesh(geometry, material);
+                cube.position.set((Math.random() - 0.5) * 5, (Math.random() - 0.5) * 3, (Math.random() - 0.5) * 2);
+                scene.add(cube);
+                cubes.push(cube);
+            }
+
+            camera.position.z = 2;
+
+            // Анимация
+            function animate() {
+                requestAnimationFrame(animate);
+                particlesMesh.rotation.y += 0.0005;
+                particlesMesh.rotation.x += 0.0002;
+                cubes.forEach(cube => {
+                    cube.rotation.x += 0.01;
+                    cube.rotation.y += 0.01;
+                });
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Ресайз
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        }
+
+        // ========== ПЕЧАТАЮЩИЙСЯ ТЕКСТ ==========
+        const words = ["3D ARTIST", "ANIMATOR", "RENDERER"];
+        const typingElement = document.getElementById('typingText');
+        let wordIndex = 0, charIndex = 0, isDeleting = false;
+
+        function type() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            let speed = isDeleting ? 50 : 150;
+            if (!isDeleting && charIndex === currentWord.length) {
+                speed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                speed = 500;
+            }
+            setTimeout(type, speed);
+        }
+
+        // ========== 3D НАКЛОН ЗАГОЛОВКА ==========
+        const mainTitle = document.getElementById('mainTitle');
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 30;
+            const y = (e.clientY / window.innerHeight - 0.5) * -30;
+            mainTitle.style.transform = `perspective(600px) rotateY(${x}deg) rotateX(${y}deg)`;
+        });
+        document.addEventListener('mouseleave', () => {
+            mainTitle.style.transform = 'perspective(600px) rotateY(0deg) rotateX(0deg)';
+        });
+
+        // ========== КНОПКА НАВЕРХ ==========
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ========== ЛАЙТБОКС ДЛЯ РЕНДЕРОВ ==========
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const renderImages = document.querySelectorAll('.render-grid img');
+        let currentImgIndex = 0;
+
+        function openLightbox(index) {
+            currentImgIndex = index;
+            lightboxImg.src = renderImages[currentImgIndex].src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        renderImages.forEach((img, index) => {
+            img.addEventListener('click', () => openLightbox(index));
+        });
+
+        document.querySelector('.lightbox-prev').addEventListener('click', () => {
+            currentImgIndex = (currentImgIndex - 1 + renderImages.length) % renderImages.length;
+            lightboxImg.src = renderImages[currentImgIndex].src;
+        });
+
+        document.querySelector('.lightbox-next').addEventListener('click', () => {
+            currentImgIndex = (currentImgIndex + 1) % renderImages.length;
+            lightboxImg.src = renderImages[currentImgIndex].src;
+        });
+
+        document.querySelector('.close').addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Клавиатура для лайтбокса
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            if (e.key === 'ArrowLeft') {
+                currentImgIndex = (currentImgIndex - 1 + renderImages.length) % renderImages.length;
+                lightboxImg.src = renderImages[currentImgIndex].src;
+            }
+            if (e.key === 'ArrowRight') {
+                currentImgIndex = (currentImgIndex + 1) % renderImages.length;
+                lightboxImg.src = renderImages[currentImgIndex].src;
+            }
+        });
+
+        // ========== ФИЛЬТР ВИДЕО ==========
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const videoCards = document.querySelectorAll('.video-card');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                videoCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ========== СЛАЙДЕР ОТЗЫВОВ ==========
+        const reviewCards = document.querySelectorAll('.review-card');
+        let currentReview = 0;
+        document.querySelector('.prev').addEventListener('click', () => {
+            reviewCards[currentReview].classList.remove('active');
+            currentReview = (currentReview - 1 + reviewCards.length) % reviewCards.length;
+            reviewCards[currentReview].classList.add('active');
+        });
+        document.querySelector('.next').addEventListener('click', () => {
+            reviewCards[currentReview].classList.remove('active');
+            currentReview = (currentReview + 1) % reviewCards.length;
+            reviewCards[currentReview].classList.add('active');
+        });
+
+        // ========== FAQ АККОРДЕОН ==========
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+
+        // ========== ЗВУК XD ==========
+        const artistTitle = document.getElementById('artistClick');
+        const xdAudio = document.getElementById('xdSound');
+        let clickCount = 0;
+        artistTitle.addEventListener('click', () => {
+            clickCount++;
+            artistTitle.classList.remove('bounce');
+            void artistTitle.offsetWidth;
+            artistTitle.classList.add('bounce');
+            if (clickCount >= 10) {
+                xdAudio.currentTime = 0;
+                xdAudio.play();
+                clickCount = 0;
+            }
+        });
+
+        // ========== RIPPLE EFFECT ==========
+        document.body.addEventListener('click', function(e) {
+            if (e.target.closest('a') || e.target.closest('button') || e.target.closest('video') || e.target.closest('img') || e.target.closest('.lightbox') || e.target.closest('audio')) return;
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            ripple.style.left = (e.clientX - 37.5) + 'px';
+            ripple.style.top = (e.clientY - 37.5) + 'px';
+            document.body.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 400);
+        });
+
+        // ========== СЧЁТЧИКИ СТАТИСТИКИ ==========
+        function initStatsCounter() {
+            const counters = document.querySelectorAll('.stat-number');
+            const options = { threshold: 0.5 };
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = +el.dataset.count;
+                        let current = 0;
+                        const increment = target / 50;
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                el.textContent = Math.ceil(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                el.textContent = target;
+                            }
+                        };
+                        updateCounter();
+                        counterObserver.unobserve(el);
+                    }
+                });
+            }, options);
+            counters.forEach(c => counterObserver.observe(c));
+        }
+
+        // ========== TILT EFFECT (НАКЛОН КАРТОЧЕК) ==========
+        function initTiltEffect() {
+            const tiltElements = document.querySelectorAll('.tilt');
+            tiltElements.forEach(el => {
+                el.addEventListener('mousemove', (e) => {
+                    const rect = el.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    el.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+                });
+                el.addEventListener('mouseleave', () => {
+                    el.style.transform = '';
+                });
+            });
+        }
+
+        // ========== МАГНИТНЫЕ КНОПКИ ==========
+        function initMagneticButtons() {
+            const magneticBtns = document.querySelectorAll('.magnetic');
+            magneticBtns.forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = '';
+                });
+            });
+        }
+    </script>
+</body>
+</html>
