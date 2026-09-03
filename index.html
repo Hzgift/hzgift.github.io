@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hzgift_xD | 3D Artist & Animator</title>
+    <meta name="description" content="Майнкрафт анимации и рендеры от маленького школьничка :3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Прелоадер с процентами -->
+    <div class="preloader" id="preloader">
+        <div class="loader-content">
+            <div class="loader-text">Hzgift_xD</div>
+            <div class="loader-bar"><span id="loader-progress"></span></div>
+            <div class="loader-percent" id="loader-percent">0%</div>
+        </div>
+    </div>
+
+    <!-- Кастомный курсор -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Навигация -->
+    <header class="navbar" id="navbar">
+        <div class="logo">Hzgift_xD</div>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="nav-link active">Главная</a>
+            <a href="#portfolio" class="nav-link">Анимации</a>
+            <a href="#renders" class="nav-link">Рендеры</a>
+            <a href="#about" class="nav-link">Обо мне</a>
+            <a href="#price" class="nav-link">Прайс</a>
+            <!-- Отзывы удалены -->
+            <a href="#faq" class="nav-link">FAQ</a>
+        </nav>
+        <div class="burger" id="burger">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <!-- Герой -->
+    <section class="hero" id="home">
+        <div class="hero-parallax" id="heroParallax"></div>
+        <div class="hero-content">
+            <div class="status" data-reveal>
+                <span class="dot"></span> Открыт для заказов
+            </div>
+            <h1 class="main-title glitch" data-text="Hzgift_xD" data-reveal>Hzgift_xD</h1>
+            <h2 class="sub-title" id="artistClick" data-reveal>
+                <span id="typingText" class="typing-text">3D ARTIST</span>
+            </h2>
+            <p class="description" data-reveal>Маленький школьник сделает для тебя анимацию или рендер качественно и быстро! :]</p>
+            <div class="buttons" data-reveal>
+                <a href="#portfolio" class="btn-primary">ПОРТФОЛИО</a>
+                <a href="#price" class="btn-secondary">ПРАЙС</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"><span></span></div>
+            <p>листай вниз</p>
+        </div>
+    </section>
+
+    <!-- Секция анимаций -->
+    <section id="portfolio" class="portfolio-section">
+        <h2 class="section-title" data-reveal>Мои анимации</h2>
+        <div class="filter-buttons" data-reveal>
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="portrait">Вертикальные</button>
+            <button class="filter-btn" data-filter="landscape">Горизонтальные</button>
+        </div>
+        <div class="video-grid video-grid-portrait" data-reveal>
+            <div class="video-card" data-category="portrait">
+                <video src="video1.mp4" controls preload="metadata"></video>
+                <div class="video-overlay"><span>▶</span></div>
+            </div>
+            <div class="video-card" data-category="portrait">
+                <video src="video2.mp4" controls preload="metadata"></video>
+                <div class="video-overlay"><span>▶</span></div>
+            </div>
+        </div>
+        <div class="video-grid video-grid-landscape" data-reveal>
+            <div class="video-card" data-category="landscape">
+                <video src="video3.mp4" controls preload="metadata"></video>
+                <div class="video-overlay"><span>▶</span></div>
+            </div>
+            <div class="video-card" data-category="landscape">
+                <video src="video4.mp4" controls preload="metadata"></video>
+                <div class="video-overlay"><span>▶</span></div>
+            </div>
+            <div class="video-card" data-category="landscape">
+                <video src="video5.mp4" controls preload="metadata"></video>
+                <div class="video-overlay"><span>▶</span></div>
+            </div>
+        </div>
+        <div class="highlight-badges" data-reveal>
+            <div class="big-badge">Работал с Cristalix</div>
+            <div class="big-badge">Работал с ютуберами с 1млн+ подписчиков</div>
+        </div>
+    </section>
+
+    <!-- Секция рендеров -->
+    <section id="renders" class="portfolio-section renders-section">
+        <h2 class="section-title" data-reveal>Мои рендеры</h2>
+        <div class="render-grid" data-reveal>
+            <img src="render1.png" alt="Рендер 1" loading="lazy">
+            <img src="render2.png" alt="Рендер 2" loading="lazy">
+            <img src="render3.png" alt="Рендер 3" loading="lazy">
+            <img src="render4.png" alt="Рендер 4" loading="lazy">
+            <img src="render5.png" alt="Рендер 5" loading="lazy">
+        </div>
+        <div class="highlight-badges" data-reveal>
+            <div class="big-badge">Работал на множество студий</div>
+            <div class="big-badge">Сделал более 100 рендеров на заказ</div>
+        </div>
+    </section>
+
+    <!-- Обо мне -->
+    <section id="about" class="about-section">
+        <h2 class="section-title" data-reveal>Обо мне</h2>
+        <div class="about-content">
+            <div class="about-card" data-reveal>
+                <div class="about-icon">🎮</div>
+                <h3>Опыт</h3>
+                <!-- Изменённый текст -->
+                <p>Более 2 лет занимаюсь 3D Рендерами и анимациями</p>
+            </div>
+            <div class="about-card" data-reveal>
+                <div class="about-icon">⚡</div>
+                <h3>Скорость</h3>
+                <!-- Изменённый текст -->
+                <p>Если нужно срочно, то могу выполнить в кратчайшие сроки, без сильной потери качества</p>
+            </div>
+            <div class="about-card" data-reveal>
+                <div class="about-icon">💎</div>
+                <h3>Качество</h3>
+                <!-- Изменённый текст -->
+                <p>Делаю качественно, и стараюсь постоянно совершенствоваться</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Прайс -->
+    <section id="price" class="price-section">
+        <h2 class="section-title" data-reveal>Прайс</h2>
+        <p class="price-subtitle" data-reveal>Цены на мои анимации и рендеры</p>
+        <div class="pricing-grid">
+            <div class="price-card popular" data-reveal>
+                <div class="pop-tag">Хит продаж</div>
+                <div class="card-header"><span class="card-icon">⚡</span><h3>Анимация</h3></div>
+                <div class="price-box">
+                    <span class="currency">₽</span>
+                    <span class="amount">100</span>
+                    <span class="per">за секунду</span>
+                </div>
+                <p class="card-desc">Качественная анимация под любую идею</p>
+                <div class="features-list">
+                    <div class="feature">Качественная картинка</div>
+                    <div class="feature">Быстрые сроки</div>
+                    <div class="feature">Первые 3 правки — бесплатно, далее 50₽</div>
+                </div>
+                <a href="https://t.me/HzLoshara42" class="btn-order">Заказать</a>
+            </div>
+            <div class="price-card" data-reveal>
+                <div class="card-header"><span class="card-icon">💡</span><h3>Сложные идеи</h3></div>
+                <div class="price-box"><span class="negotiable">Цена обсуждается</span></div>
+                <p class="card-desc">Если у тебя есть сложный сценарий — обсудим детали в ЛС.</p>
+                <a href="https://t.me/HzLoshara42" class="btn-secondary-full">Написать в ТГ</a>
+            </div>
+            <div class="price-card" data-reveal>
+                <div class="card-header"><span class="card-icon">🎨</span><h3>Рендер</h3></div>
+                <div class="price-box">
+                    <span class="currency">от</span>
+                    <span class="amount">150</span>
+                    <span class="per">до 300 ₽</span>
+                </div>
+                <p class="card-desc">Цена зависит от количества персонажей, масштаба локации и сложности идеи. Всё обсуждается в лс.</p>
+                <div class="features-list"><div class="feature">Правки включены сколько угодно</div></div>
+                <a href="https://t.me/HzLoshara42" class="btn-order">Заказать</a>
+            </div>
+        </div>
+        <div class="socials" data-reveal>
+            <a href="https://t.me/HzLoshara42" class="social-btn" target="_blank">
+                <!-- Полный SVG path для Telegram -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                Telegram
+            </a>
+            <a href="https://discord.com/users/hzgift" class="social-btn" target="_blank">
+                <!-- Полный SVG path для Discord -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+                Discord
+            </a>
+        </div>
+    </section>
+
+    <!-- Секция отзывов УДАЛЕНА -->
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section">
+        <h2 class="section-title" data-reveal>Частые вопросы</h2>
+        <div class="faq-list" data-reveal>
+            <div class="faq-item">
+                <button class="faq-question">Сколько времени занимает заказ? <span>+</span></button>
+                <div class="faq-answer"><p>Обычно от 2 до 8 дней в зависимости от сложности и количества правок.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Как происходит оплата? <span>+</span></button>
+                <div class="faq-answer"><p>Оплата на ЮМани, если что то пойдет не так - обсудим в лс</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Можно ли заказать срочно? <span>+</span></button>
+                <div class="faq-answer"><p>Да, срочные заказы выполняются с доплатой 40% к стоимости.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-logo">Hzgift_xD</div>
+        <div class="footer-socials">
+            <a href="https://t.me/HzLoshara42" target="_blank">Telegram</a>
+            <a href="https://discord.com/users/hzgift" target="_blank">Discord</a>
+        </div>
+        <p>© 2025 Все права защищены</p>
+    </footer>
+
+    <!-- Кнопка наверх -->
+    <button id="backToTop" class="back-to-top">↑</button>
+
+    <!-- Лайтбокс -->
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <button class="lightbox-prev">❮</button>
+        <button class="lightbox-next">❯</button>
+    </div>
+
+    <audio id="xdSound" src="xd.mp3"></audio>
+    <div class="particles-container" id="particles"></div>
+
+    <script>
+        // ========== ПРЕЛОАДЕР ==========
+        window.addEventListener('load', () => {
+            let percent = 0;
+            const loaderBar = document.getElementById('loader-progress');
+            const loaderPercent = document.getElementById('loader-percent');
+            const interval = setInterval(() => {
+                percent += Math.floor(Math.random() * 15) + 1;
+                if (percent >= 100) {
+                    percent = 100;
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        document.getElementById('preloader').style.opacity = '0';
+                        document.getElementById('preloader').style.visibility = 'hidden';
+                        initAfterLoad();
+                    }, 300);
+                }
+                loaderBar.style.width = percent + '%';
+                loaderPercent.textContent = percent + '%';
+            }, 150);
+        });
+
+        function initAfterLoad() {
+            type();
+            initParticles();
+        }
+
+        // ========== КАСТОМНЫЙ КУРСОР ==========
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            dot.style.left = mouseX - 4 + 'px';
+            dot.style.top = mouseY - 4 + 'px';
+        });
+
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.2;
+            ringY += (mouseY - ringY) * 0.2;
+            ring.style.left = ringX - 15 + 'px';
+            ring.style.top = ringY - 15 + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        document.querySelectorAll('a, button, .video-card, .render-grid img, .price-card, .faq-question').forEach(el => {
+            el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+            el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+        });
+
+        // ========== МОБИЛЬНОЕ МЕНЮ ==========
+        const burger = document.getElementById('burger');
+        const navLinks = document.getElementById('navLinks');
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            burger.classList.toggle('active');
+        });
+
+        // ========== ПЛАВНЫЙ СКРОЛЛ И АКТИВНАЯ ССЫЛКА ==========
+        const sections = document.querySelectorAll('section[id]');
+        const navAnchors = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navAnchors.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+            if (scrollY > 200) {
+                document.getElementById('navbar').classList.add('scrolled');
+            } else {
+                document.getElementById('navbar').classList.remove('scrolled');
+            }
+        });
+
+        // ========== ПОЯВЛЕНИЕ ЭЛЕМЕНТОВ ПРИ СКРОЛЛЕ ==========
+        const revealElements = document.querySelectorAll('[data-reveal]');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+        revealElements.forEach(el => observer.observe(el));
+
+        // ========== ПАРАЛЛАКС В ГЕРОЕ ==========
+        const parallax = document.getElementById('heroParallax');
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
+            parallax.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        // ========== ЧАСТИЦЫ ==========
+        function initParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 60; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                const size = Math.random() * 4 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
+                container.appendChild(particle);
+            }
+            document.addEventListener('mousemove', (e) => {
+                const particles = document.querySelectorAll('.particle');
+                particles.forEach(p => {
+                    const rect = p.getBoundingClientRect();
+                    const dx = e.clientX - (rect.left + rect.width / 2);
+                    const dy = e.clientY - (rect.top + rect.height / 2);
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        const force = (150 - dist) / 150 * 15;
+                        p.style.transform = `translate(${-dx / dist * force}px, ${-dy / dist * force}px)`;
+                    } else {
+                        p.style.transform = '';
+                    }
+                });
+            });
+        }
+
+        // ========== ПЕЧАТАЮЩИЙСЯ ТЕКСТ ==========
+        const words = ["3D ARTIST", "ANIMATOR", "RENDERER"];
+        const typingElement = document.getElementById('typingText');
+        let wordIndex = 0, charIndex = 0, isDeleting = false;
+
+        function type() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            let speed = isDeleting ? 50 : 150;
+            if (!isDeleting && charIndex === currentWord.length) {
+                speed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                speed = 500;
+            }
+            setTimeout(type, speed);
+        }
+
+        // ========== 3D НАКЛОН ЗАГОЛОВКА ==========
+        const mainTitle = document.querySelector('.main-title');
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 30;
+            const y = (e.clientY / window.innerHeight - 0.5) * -30;
+            mainTitle.style.transform = `perspective(600px) rotateY(${x}deg) rotateX(${y}deg)`;
+        });
+        document.addEventListener('mouseleave', () => {
+            mainTitle.style.transform = 'perspective(600px) rotateY(0deg) rotateX(0deg)';
+        });
+
+        // ========== КНОПКА НАВЕРХ ==========
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ========== ЛАЙТБОКС ДЛЯ РЕНДЕРОВ ==========
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const renderImages = document.querySelectorAll('.render-grid img');
+        let currentImgIndex = 0;
+
+        function openLightbox(index) {
+            currentImgIndex = index;
+            lightboxImg.src = renderImages[currentImgIndex].src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        renderImages.forEach((img, index) => {
+            img.addEventListener('click', () => openLightbox(index));
+        });
+
+        document.querySelector('.lightbox-prev').addEventListener('click', () => {
+            currentImgIndex = (currentImgIndex - 1 + renderImages.length) % renderImages.length;
+            lightboxImg.src = renderImages[currentImgIndex].src;
+        });
+
+        document.querySelector('.lightbox-next').addEventListener('click', () => {
+            currentImgIndex = (currentImgIndex + 1) % renderImages.length;
+            lightboxImg.src = renderImages[currentImgIndex].src;
+        });
+
+        document.querySelector('.close').addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ========== ФИЛЬТР ВИДЕО ==========
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const videoCards = document.querySelectorAll('.video-card');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                videoCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ========== FAQ АККОРДЕОН ==========
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+
+        // ========== ЗВУК XD ==========
+        const artistTitle = document.getElementById('artistClick');
+        const xdAudio = document.getElementById('xdSound');
+        let clickCount = 0;
+        artistTitle.addEventListener('click', () => {
+            clickCount++;
+            artistTitle.classList.remove('bounce');
+            void artistTitle.offsetWidth;
+            artistTitle.classList.add('bounce');
+            if (clickCount >= 10) {
+                xdAudio.currentTime = 0;
+                xdAudio.play();
+                clickCount = 0;
+            }
+        });
+
+        // ========== RIPPLE EFFECT ==========
+        document.body.addEventListener('click', function(e) {
+            if (e.target.closest('a') || e.target.closest('button') || e.target.closest('video') || e.target.closest('img') || e.target.closest('.lightbox') || e.target.closest('audio')) return;
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            ripple.style.left = (e.clientX - 37.5) + 'px';
+            ripple.style.top = (e.clientY - 37.5) + 'px';
+            document.body.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 400);
+        });
+    </script>
+</body>
+</html>
